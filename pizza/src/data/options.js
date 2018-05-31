@@ -6,11 +6,11 @@
 // 3. 35cm NY Style € 13,49
 // 4. 20cm NY Style € 6,45
 
-export const pizzaBase = [
-  {id: 1, name: 'NY25', cm: 25, price: 8.99},
-  {id: 2, name: 'NY30',cm: 30, price: 11.49},
-  {id: 3, name: 'NY35',cm: 35, price: 13.49},
-  {id: 4, name: 'NY20',cm: 20, price: 6.45}
+export const pizzaBases = [
+  {id: 1, name: 'NY25', size: 25, price: 8.99},
+  {id: 2, name: 'NY30', size: 30, price: 11.49},
+  {id: 3, name: 'NY35', size: 35, price: 13.49},
+  {id: 4, name: 'NY20', size: 20, price: 6.45}
 ]
 
 // After that you pick your sauce options:
@@ -20,7 +20,7 @@ export const pizzaBase = [
 // 3. Double red sauce € 1,00
 // 4. Mix it up € 1,50 
 
-export const pizzaSauce = [
+export const pizzaSauces = [
   {id: 1, name: 'White sauce', price: 0.00},
   {id: 2, name: 'Red sauce', price: 0.00},
   {id: 3, name: 'Double red sauce', price: 1.00},

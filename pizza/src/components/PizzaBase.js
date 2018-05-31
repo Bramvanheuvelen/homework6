@@ -1,58 +1,33 @@
-import React from 'react'
-import pizzabase from '../data/choises'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import pizzaBases from '../data/options'
+import baseChoice from '../actions/basechoice.js'
 
-class PizzaBase extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      NY25: true,
-      NY30: true,
-      NY35: true,
-      NY20: true,
-    };
+class PizzaBase extends Component {
+
+  // createAd = (ad) => {
+  //   this.props.createAd(ad)
+  // }
   
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-  
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    
-    this.setState({
-      [name]: value
-    });
-  }
+  // componentWillMount() {
+  //   this.props.fetchAllAds()
+  // }
   
   render() {
     return (
-      <form>
-        <label>
-            Choose your base:
-          <input
-            name="NY25"
-            type="checkbox"
-            checked={this.state.NY25}
-            onChange={this.handleInputChange} />
-          <input
-            name="NY30"
-            type="checkbox"
-            checked={this.state.NY30}
-            onChange={this.handleInputChange} />
-          <input
-            name="NY35"
-            type="checkbox"
-            checked={this.state.NY35}
-            onChange={this.handleInputChange} />
-          <input
-            name="NY20"
-            type="checkbox"
-            checked={this.state.NY20}
-            onChange={this.handleInputChange} />
-        </label>
-      </form>
-    );
+      <div>
+        <h1>Choose your base</h1>
+        <table>
+          <tbody>
+            { pizzaBases.map(pizzabase => (<tr key={pizzabase.id}>
+              <td>{pizzabase.name} {pizzabase.size} {pizzabase.price}</td>
+                baseChoice
+            </tr>)) }
+          </tbody>
+        </table>
+      </div>
+    )
   }
 }
   
-export default PizzaBase
+export default connect(null, { baseChoice })(PizzaBase)
