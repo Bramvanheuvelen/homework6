@@ -9,7 +9,7 @@
 export const pizzaBase = [
     {id: 1, cm: 25, price: 8.99},
     {id: 2, cm: 30, price: 11.49},
-        {id: 3, cm: 35, price: 13.49},
+    {id: 3, cm: 35, price: 13.49},
     {id: 4, cm: 20, price: 6.45}
 ]
 
