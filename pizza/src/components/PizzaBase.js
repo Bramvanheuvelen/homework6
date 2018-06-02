@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import pizzaBases from '../data/options'
-import baseChoice from '../actions/basechoice.js'
+import { pizzaBases } from '../data/options'
+import { baseChoice } from '../actions/basechoice.js'
 
 class PizzaBase extends Component {
 
@@ -18,12 +18,10 @@ class PizzaBase extends Component {
       <div>
         <h1>Choose your base</h1>
         <table>
-          <tbody>
-            { pizzaBases.map(pizzabase => (<tr key={pizzabase.id}>
-              <td>{pizzabase.name} {pizzabase.size} {pizzabase.price}</td>
-                baseChoice
-            </tr>)) }
-          </tbody>
+          { pizzaBases.map(pizzabase => (<tr key={pizzabase.id}>
+            <input type="checkbox" onClick={() => this.props.baseChoice(pizzaBases)}/>
+            <td>Name: {pizzabase.name} Size: {pizzabase.size} Price: {pizzabase.price}</td>
+          </tr>)) }
         </table>
       </div>
     )

@@ -1,3 +1,5 @@
+import pizzabase from './choice'
 
-
-export default {} // empty for now
+export default {
+  pizzabase
+} // empty for now
