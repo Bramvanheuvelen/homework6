@@ -19,7 +19,7 @@ class PizzaBase extends Component {
         <h1>Choose your base</h1>
         <table>
           { pizzaBases.map(pizzabase => (<tr key={pizzabase.id}>
-            <input type="checkbox" onClick={() => this.props.baseChoice(pizzaBases)}/>
+            <input type="radio" name="name" onClick={() => this.props.baseChoice(pizzabase)}/>
             <td>Name: {pizzabase.name} Size: {pizzabase.size} Price: {pizzabase.price}</td>
           </tr>)) }
         </table>
@@ -29,3 +29,15 @@ class PizzaBase extends Component {
 }
   
 export default connect(null, { baseChoice })(PizzaBase)
+
+{/* <FormGroup>
+      <Radio onClick={() => this.props.baseChoice(pizzabase.id[1])} inline>
+        1
+      </Radio>{' '}
+      <Radio name="radioGroup" inline>
+        2
+      </Radio>{' '}
+      <Radio name="radioGroup" inline>
+        3
+      </Radio>
+    </FormGroup> */}
