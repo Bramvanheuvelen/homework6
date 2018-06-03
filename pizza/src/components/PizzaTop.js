@@ -7,54 +7,46 @@ class PizzaTop extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { value: '' };
-  
+
     this.handleChange = this.handleChange.bind(this);
   }
 
-    handleChange = (e) => {
-      if (e.target.checked) {
-        store.dispatch(chooseTopping(e.target.value))
-      } else {
-        store.dispatch(deleteTopping(e.target.value));
-      }
-    }
-
-
-    render() {
-      return (
-        <form id="toppingform">
-          <input type="checkbox" value="Pineapple" onChange={this.handleChange} />
-          <label for="Pineapple">Pineapple</label>
-
-          <input type="checkbox" value="Corn" onChange={this.handleChange} />
-          <label for="Corn">Corn</label>
-
-          <input type="checkbox" value="Green Olives" onChange={this.handleChange} />
-          <label for="Green Olives">Green Olives</label>
-
-          <input type="checkbox" value="Red Onion" onChange={this.handleChange} />
-          <label for="Red Onion">Red Onion</label>
-
-          <input type="checkbox" value="Spinach" onChange={this.handleChange} />
-          <label for="Spinach">Spinach</label>
-
-          <input type="checkbox" value="Cherry Tomatoes" onChange={this.handleChange} />
-          <label for="Cherry Tomatoes">Cherry Tomatoes</label>
-
-          <input type="checkbox" value="Chicken" onChange={this.handleChange} />
-          <label for="Chicken">Chicken</label>
-        </form>
-      )
-    }
-}
-
-
-
-
-const mapStateToProps = function (state, props) {
-  return {
-    toppings: state.toppings
+handleChange = (e) => {
+  if (e.target.checked) {
+    store.dispatch(chooseTopping(e.target.value))
+  } else {
+    store.dispatch(deleteTopping(e.target.value));
   }
 }
 
-export default connect(mapStateToProps, { chooseTopping, deleteTopping })(PizzaTop)
+
+render() {
+  return (
+    <form id="toppingform">
+      <h1>Choose your 1, 2 or maximum 3 toppings</h1>
+      <input type="checkbox" value="Pineapple" onChange={this.handleChange} />
+      <label for="Pineapple">Pineapple</label>
+
+      <input type="checkbox" value="Corn" onChange={this.handleChange} />
+      <label for="Corn">Corn</label>
+
+      <input type="checkbox" value="Green olives" onChange={this.handleChange} />
+      <label for="Green Olives">Green olives</label>
+
+      <input type="checkbox" value="Red onion" onChange={this.handleChange} />
+      <label for="Red Onion">Red onion</label>
+
+      <input type="checkbox" value="Spinach" onChange={this.handleChange} />
+      <label for="Spinach">Spinach</label>
+
+      <input type="checkbox" value="Cherry tomatoes" onChange={this.handleChange} />
+      <label for="Cherry Tomatoes">Cherry tomatoes</label>
+
+      <input type="checkbox" value="Chicken" onChange={this.handleChange} />
+      <label for="Chicken">chicken</label>
+    </form>
+  )
+}
+}
+
+export default connect(null, { chooseTopping, deleteTopping })(PizzaTop)

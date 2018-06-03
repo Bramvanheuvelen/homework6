@@ -1,50 +1,23 @@
+export const Bases = {
+  'NY25': 8.99,
+  'NY30': 11.49,
+  'NY35': 13.49,
+  'NY20': 6.45
+}
 
-// // First you pick your base. You have four options:
+export const sauces = {
+  "White Sauce": Number(0),
+  "Red Sauce": Number(0),
+  "Double Red Sauce": 1.00,
+  "Mix it up!": 1.50
+}
 
-// 1. 25cm NY Style € 8,99
-// 2. 30cm NY Style € 11,49
-// 3. 35cm NY Style € 13,49
-// 4. 20cm NY Style € 6,45
-
-export const pizzaBases = [
-  {id: 1, name: 'NY25', size: 25, price: 8.99},
-  {id: 2, name: 'NY30', size: 30, price: 11.49},
-  {id: 3, name: 'NY35', size: 35, price: 13.49},
-  {id: 4, name: 'NY20', size: 20, price: 6.45}
-]
-
-// After that you pick your sauce options:
-
-// 1. White sauce
-// 2. Red sauce
-// 3. Double red sauce € 1,00
-// 4. Mix it up € 1,50 
-
-export const pizzaSauces = [
-  {id: 1, name: 'White sauce', price: 0.00},
-  {id: 2, name: 'Red sauce', price: 0.00},
-  {id: 3, name: 'Double red sauce', price: 1.00},
-  {id: 4, name: 'Mix it up', price: 1.50}
-]
-
-// After that you pick one or more toppings:
-
-// 1. Pineapple
-// 2. Corn
-// 3. Olives (green)
-// 4. Red union
-// 5. Spinach
-// 6. Cherry tomatoes
-// 7. Chicken
-
-export const pizzaToppings = [
-  {id: 1, name: 'Pineapple', price: 0.50},
-  {id: 2, name: 'Corn', price: 0.50},
-  {id: 3, name: 'Olives (green)', price: 0.50},
-  {id: 4, name: 'Red union', price: 0.50},
-  {id: 5, name: 'Spinach', price: 0.50},
-  {id: 6, name: 'Cherry tomatoes', price: 0.50},
-  {id: 7, name: 'Chicken', price: 0.50}
-]
-
-// _Rules: max. 3 toppings, toppings cost € 0,50 apiece_
+export const toppings = {
+  "Pineapple": 0.50,
+  "Corn": 0.50,
+  "Green Olives": 0.50,
+  "Red Onion": 0.50,
+  "Spinach": 0.50,
+  "Cherry Tomatoes": 0.50,
+  "Chicken": 0.50,
+}

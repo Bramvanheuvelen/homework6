@@ -24,6 +24,7 @@ class PizzaBase extends PureComponent {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
+          <h1>Choose your base</h1>
           <label>
             <input type="radio" value="NY25" 
               checked={this.state.selectedOption === 'NY25'} 
@@ -57,10 +58,4 @@ class PizzaBase extends PureComponent {
 
 }
 
-const mapStateToProps = function (state, props) {
-  return {
-    bases: state.bases
-  }
-}
-
-export default connect(mapStateToProps, { chooseBase })(PizzaBase)
+export default connect(null, { chooseBase })(PizzaBase)

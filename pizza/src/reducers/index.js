@@ -1,9 +1,12 @@
-import PizzaBase from './basechoice'
-import PizzaSauce from './saucechoice'
-import PizzaTopping from './toppingchoice'
+import bases from './basechoice'
+import sauces from './saucechoice'
+import toppings from './toppingchoice'
+import drone from './drone'
+
 
 export default {
-  PizzaBase,
-  PizzaSauce,
-  PizzaTopping,
-} 
+  bases,
+  sauces,
+  toppings,
+  drone
+}

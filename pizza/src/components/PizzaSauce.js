@@ -25,9 +25,10 @@ class PizzaSauce extends PureComponent {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
+          <h1>Choose your sauce</h1>
           <label>
             <input type="radio" value="White Sauce" 
-              checked={this.state.selectedOption === 'White Sauce'} 
+              checked={this.state.selectedOption === "White Sauce"} 
               onChange={this.handleChange} />
         White sauce
           </label>
@@ -41,26 +42,20 @@ class PizzaSauce extends PureComponent {
           <br></br>
           <label>
             <input type="radio" value="Double Red Sauce" 
-              checked={this.state.selectedOption === 'Double Red Sauce'} 
+              checked={this.state.selectedOption === "Double Red Sauce"} 
               onChange={this.handleChange} />
         Double Red sauce
           </label>
           <br></br>
           <label>
-            <input type="radio" value="Mix it up" 
-              checked={this.state.selectedOption === 'Mix it up'} 
+            <input type="radio" value="Mix it up!" 
+              checked={this.state.selectedOption === 'Mix it up!'} 
               onChange={this.handleChange} />
-        Mix it up
+        Mix it up!
           </label>
         </form>
       );
     }
 }
 
-const mapStateToProps = function (state, props) {
-  return {
-    sauces: state.sauces
-  }
-}
-
-export default connect(mapStateToProps, { chooseSauce })(PizzaSauce)
+export default connect(null, { chooseSauce })(PizzaSauce)
