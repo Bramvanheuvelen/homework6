@@ -1,9 +1,9 @@
-import { SAUCE_CHOICE } from '../actions/saucechoice'
+import { CHOOSE_SAUCE } from '../actions/index'
 
-export default (state = null, {type, payload}) => {
-  switch (type) {
-  case SAUCE_CHOICE:
-    return {...state, pizzasauce: payload}
+export default function (state = [], action = {}) {
+  switch (action.type) {
+  case CHOOSE_SAUCE:
+    return action.payload.value
   default:
     return state
   }

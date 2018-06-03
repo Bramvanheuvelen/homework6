@@ -1,9 +1,9 @@
-import pizzabase from './basechoice'
-import pizzasauce from './saucechoice'
-import topping from './toppingchoice'
+import PizzaBase from './basechoice'
+import PizzaSauce from './saucechoice'
+import PizzaTopping from './toppingchoice'
 
 export default {
-  pizzabase,
-  pizzasauce,
-  topping
-} // empty for now
+  PizzaBase,
+  PizzaSauce,
+  PizzaTopping,
+} 

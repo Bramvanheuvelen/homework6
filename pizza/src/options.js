@@ -37,7 +37,7 @@ export const pizzaSauces = [
 // 6. Cherry tomatoes
 // 7. Chicken
 
-export const pizzatoppings = [
+export const pizzaToppings = [
   {id: 1, name: 'Pineapple', price: 0.50},
   {id: 2, name: 'Corn', price: 0.50},
   {id: 3, name: 'Olives (green)', price: 0.50},
