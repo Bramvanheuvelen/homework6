@@ -26,7 +26,7 @@ handleChange = (e) => {
 render() {
   return (
     <form id="toppingform" onSubmit={this.handleSubmit}>
-      <h1>Choose your 1, 2 or maximum 3 toppings</h1>
+      <h1>Choose your 1, 2 or maximum 3 toppings! Price: 0.5 each</h1>
       <input type="checkbox" value="Pineapple" onChange={this.handleChange} disabled={this.props.toppings.length === 3}/>
       <label for="Pineapple">Pineapple</label>
 
@@ -47,7 +47,7 @@ render() {
 
       <input type="checkbox" value="Chicken" onChange={this.handleChange} disabled={this.props.toppings.length === 3}/>
       <label for="Chicken">chicken</label>
-      <input type="submit" value="Reset" />
+      <input type="submit" value="Reset Choices"/>
     </form>
   )
 }

@@ -9,7 +9,6 @@ class PizzaBase extends PureComponent {
     this.state = { value: '' };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -17,13 +16,11 @@ class PizzaBase extends PureComponent {
     store.dispatch(chooseBase({ value: e.target.value }))
   }
 
-    handleSubmit = (e) => {
-      e.preventDefault();
-    }
+
 
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <h1>Choose your base</h1>
           <label>
             <input type="radio" value="NY25" 

@@ -30,10 +30,10 @@ class PizzaCosts extends PureComponent {
     return (
       <div>
         {!this.props.drone && <h1>Price to pay: {this.pizzaPrice()}</h1>}
-    {this.props.drone && <h1>Price to pay: {(this.pizzaPrice() * 1.1).toFixed(2)}</h1>}
+        {this.props.drone && <h1>Price to pay: {(this.pizzaPrice() * 1.1).toFixed(2)}</h1>}
         <form id="turbodrone">
           <input type="checkbox" value="Turbodrone" onChange={this.handleChange} />
-          <label for="Turbodrone">Turbodrone Delivery?</label>
+          <label for="Turbodrone">Turbodrone Delivery? 10% extra</label>
         </form>
       </div>
     )
