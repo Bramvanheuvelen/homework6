@@ -1,11 +1,11 @@
 import { DRONE_TURBO, NO_TURBO } from '../actions/index'
 
-export default function (state = [], action = {}) {
+export default function (state = null, action = {}) {
   switch (action.type) {
   case DRONE_TURBO:
-    return state.concat(action.payload)
+    return action.payload
   case NO_TURBO:
-    return state.filter(turbo => turbo !== action.payload)
+    return null
   default:
     return state
   }

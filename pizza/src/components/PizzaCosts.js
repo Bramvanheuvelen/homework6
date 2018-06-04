@@ -21,7 +21,7 @@ class PizzaCosts extends PureComponent {
   }
   
   pizzaPrice() {
-    const basePrice = (this.props.bases ? Bases[this.props.bases] : 0)
+    const basePrice = (this.props.bases.length ? Bases[this.props.bases] : 0)
     const saucePrice = (this.props.sauces.length ? sauces[this.props.sauces] : 0)
     const toppingPrice = (this.props.toppings).length * .5
     return basePrice + saucePrice + toppingPrice
@@ -29,7 +29,8 @@ class PizzaCosts extends PureComponent {
   render() {
     return (
       <div>
-        <h1>Price to pay: {this.pizzaPrice()}</h1>
+        {!this.props.drone && <h1>Price to pay: {this.pizzaPrice()}</h1>}
+        {this.props.drone && <h1>Price to pay: {this.pizzaPrice() * 1.1}</h1>}
         <form id="turbodrone">
           <input type="checkbox" value="Turbodrone" onChange={this.handleChange} />
           <label for="Turbodrone">Turbodrone Delivery?</label>
@@ -43,7 +44,8 @@ function mapStateToProps(state) {
   return {
     bases: state.bases,
     sauces: state.sauces,
-    toppings: state.toppings
+    toppings: state.toppings,
+    drone: state.drone
   }
 }
 
