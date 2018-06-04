@@ -27,28 +27,28 @@ class PizzaBase extends PureComponent {
           <h1>Choose your base</h1>
           <label>
             <input type="radio" value="NY25" 
-              checked={this.state.selectedOption === 'NY25'} 
+              checked={this.state.value === 'NY25'} 
               onChange={this.handleChange} />
           NY25! size: 25cm price: 8.99
           </label>
           <br></br>
           <label>
             <input type="radio" value="NY30" 
-              checked={this.state.selectedOption === 'NY30'} 
+              checked={this.state.value === 'NY30'} 
               onChange={this.handleChange} />
           NY30! size: 30cm price: 11.49
           </label>
           <br></br>
           <label>
             <input type="radio" value="NY35" 
-              checked={this.state.selectedOption === 'NY35'} 
+              checked={this.state.value === 'NY35'} 
               onChange={this.handleChange} />
           NY35! size: 35cm price: 13.49
           </label>
           <br></br>
           <label>
             <input type="radio" value="NY20" 
-              checked={this.state.selectedOption === 'NY20'} 
+              checked={this.state.value === 'NY20'} 
               onChange={this.handleChange} />
           NY20! size: 20cm price: 6.45
           </label>

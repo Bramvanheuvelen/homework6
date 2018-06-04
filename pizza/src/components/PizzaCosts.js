@@ -19,11 +19,10 @@ class PizzaCosts extends PureComponent {
       store.dispatch(noTurbo(e.target.value));
     }
   }
-
   
   pizzaPrice() {
-    const basePrice = (this.props.base ? Bases[this.props.base] : 0)
-    const saucePrice = (this.props.sauce ? sauces[this.props.sauce] : 0)
+    const basePrice = (this.props.bases ? Bases[this.props.bases] : 0)
+    const saucePrice = (this.props.sauces.length ? sauces[this.props.sauces] : 0)
     const toppingPrice = (this.props.toppings).length * .5
     return basePrice + saucePrice + toppingPrice
   }
@@ -42,8 +41,8 @@ class PizzaCosts extends PureComponent {
 
 function mapStateToProps(state) {
   return {
-    bases: state.base,
-    sauces: state.sauce,
+    bases: state.bases,
+    sauces: state.sauces,
     toppings: state.toppings
   }
 }

@@ -28,28 +28,28 @@ class PizzaSauce extends PureComponent {
           <h1>Choose your sauce</h1>
           <label>
             <input type="radio" value="White Sauce" 
-              checked={this.state.selectedOption === "White Sauce"} 
+              checked={this.state.value === "White Sauce"} 
               onChange={this.handleChange} />
         White sauce
           </label>
           <br></br>
           <label>
             <input type="radio" value="Red Sauce" 
-              checked={this.state.selectedOption === 'Red Sauce'} 
+              checked={this.state.value === 'Red Sauce'} 
               onChange={this.handleChange} />
         Red sauce
           </label>
           <br></br>
           <label>
             <input type="radio" value="Double Red Sauce" 
-              checked={this.state.selectedOption === "Double Red Sauce"} 
+              checked={this.state.value === "Double Red Sauce"} 
               onChange={this.handleChange} />
         Double Red sauce
           </label>
           <br></br>
           <label>
             <input type="radio" value="Mix it up!" 
-              checked={this.state.selectedOption === 'Mix it up!'} 
+              checked={this.state.value === 'Mix it up!'} 
               onChange={this.handleChange} />
         Mix it up!
           </label>
