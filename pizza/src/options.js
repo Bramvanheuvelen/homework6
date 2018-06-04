@@ -1,5 +1,5 @@
 export const Bases = {
-  'NY25': 8.99,
+  'NY25': Number(8.99),
   'NY30': 11.49,
   'NY35': 13.49,
   'NY20': 6.45
