@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import { chooseSauce } from '../actions/index'
 import store from '../store'
 
+import Paper from '@material-ui/core/Paper';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Radio from '@material-ui/core/Radio';
+
 class PizzaSauce extends PureComponent {
   constructor(props) {
     super(props);
@@ -16,39 +22,23 @@ class PizzaSauce extends PureComponent {
     store.dispatch(chooseSauce({ value: e.target.value }))
   }
 
-
     render() {
       return (
-        <form>
-          <h1>Choose your sauce</h1>
-          <label>
-            <input type="radio" value="White Sauce" 
-              checked={this.state.value === "White Sauce"} 
-              onChange={this.handleChange} />
-        White sauce, price: 0
-          </label>
-          <br></br>
-          <label>
-            <input type="radio" value="Red Sauce" 
-              checked={this.state.value === 'Red Sauce'} 
-              onChange={this.handleChange} />
-        Red sauce, price: 0
-          </label>
-          <br></br>
-          <label>
-            <input type="radio" value="Double Red Sauce" 
-              checked={this.state.value === "Double Red Sauce"} 
-              onChange={this.handleChange} />
-        Double Red sauce, price: 1
-          </label>
-          <br></br>
-          <label>
-            <input type="radio" value="Mix it up!" 
-              checked={this.state.value === 'Mix it up!'} 
-              onChange={this.handleChange} />
-        Mix it up!, price: 1.5
-          </label>
-        </form>
+        <div>
+          <Paper elevation={4}>
+            <FormControl component="fieldset" required >
+              <FormLabel component="legend">Choose your sauce</FormLabel>
+                <FormControlLabel value="White Sauce" control={<Radio />} label="White sauce, price: 0.00" checked={this.state.value === 'White Sauce'} 
+                  onChange={this.handleChange}/>
+                <FormControlLabel value="Red Sauce" control={<Radio />} label="Red sauce, price: 0.00" checked={this.state.value === 'Red Sauce'} 
+                  onChange={this.handleChange}/>
+                <FormControlLabel value="Double Red Sauce" control={<Radio />} label="Double red sauce, price: 1.00" checked={this.state.value === 'Double Red Sauce'} 
+                  onChange={this.handleChange}/>
+                <FormControlLabel value="Mix it up!" control={<Radio />} label="Mix it up!, price: 1.50" checked={this.state.value === 'Mix it up!'} 
+                  onChange={this.handleChange}/>
+            </FormControl>
+          </Paper>
+        </div>
       );
     }
 }

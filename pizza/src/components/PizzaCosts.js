@@ -4,6 +4,10 @@ import { Bases, sauces } from '../options'
 import store from '../store'
 import { droneTurbo, noTurbo } from '../actions/index'
 
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Paper from '@material-ui/core/Paper';
+
 class PizzaCosts extends PureComponent {
   constructor(props) {
     super(props);
@@ -29,12 +33,19 @@ class PizzaCosts extends PureComponent {
   render() {
     return (
       <div>
-        {!this.props.drone && <h1>Price to pay: {this.pizzaPrice()}</h1>}
-        {this.props.drone && <h1>Price to pay: {(this.pizzaPrice() * 1.1).toFixed(2)}</h1>}
-        <form id="turbodrone">
-          <input type="checkbox" value="Turbodrone" onChange={this.handleChange} />
-          <label htmlFor="Turbodrone">Turbodrone Delivery? 10% extra</label>
-        </form>
+        <Paper elevation={4}>
+          {!this.props.drone && <h1>Price to pay: {this.pizzaPrice()}</h1>}
+          {this.props.drone && <h1>Price to pay: {(this.pizzaPrice() * 1.1).toFixed(2)}</h1>}
+            <FormControlLabel
+              control={
+                <Checkbox
+                  onChange={this.handleChange}
+                  value="Turbodrone"
+                />
+              }
+              label="Turbodrone Delivery? 10% extra"
+              />
+        </Paper>
       </div>
     )
   }

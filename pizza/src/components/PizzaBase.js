@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import { chooseBase } from '../actions/index'
 import store from '../store'
 
+import Paper from '@material-ui/core/Paper';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Radio from '@material-ui/core/Radio';
+
 class PizzaBase extends PureComponent {
   constructor(props) {
     super(props);
@@ -16,43 +22,25 @@ class PizzaBase extends PureComponent {
     store.dispatch(chooseBase({ value: e.target.value }))
   }
 
-
-
     render() {
       return (
-        <form>
-          <h1>Choose your base</h1>
-          <label>
-            <input type="radio" value="NY25" 
-              checked={this.state.value === 'NY25'} 
-              onChange={this.handleChange} />
-          NY25! size: 25cm price: 8.99
-          </label>
-          <br></br>
-          <label>
-            <input type="radio" value="NY30" 
-              checked={this.state.value === 'NY30'} 
-              onChange={this.handleChange} />
-          NY30! size: 30cm price: 11.49
-          </label>
-          <br></br>
-          <label>
-            <input type="radio" value="NY35" 
-              checked={this.state.value === 'NY35'} 
-              onChange={this.handleChange} />
-          NY35! size: 35cm price: 13.49
-          </label>
-          <br></br>
-          <label>
-            <input type="radio" value="NY20" 
-              checked={this.state.value === 'NY20'} 
-              onChange={this.handleChange} />
-          NY20! size: 20cm price: 6.45
-          </label>
-        </form>
+        <div>
+          <Paper elevation={4}>
+            <FormControl component="fieldset" required >
+              <FormLabel component="legend">Choose your base</FormLabel>
+                <FormControlLabel value="NY25" control={<Radio />} label="NY25! size: 25cm price: 8.99" checked={this.state.value === 'NY25'} 
+                  onChange={this.handleChange}/>
+                <FormControlLabel value="NY30" control={<Radio />} label="NY30! size: 30cm price: 11.49" checked={this.state.value === 'NY30'} 
+                  onChange={this.handleChange}/>
+                <FormControlLabel value="NY35" control={<Radio />} label="NY35! size: 35cm price: 13.49" checked={this.state.value === 'NY35'} 
+                  onChange={this.handleChange}/>
+                <FormControlLabel value="NY20" control={<Radio />} label="NY20! size: 20cm price: 6.45" checked={this.state.value === 'NY20'} 
+                  onChange={this.handleChange}/>
+            </FormControl>
+          </Paper>
+        </div>
       );
     }
-
 }
 
 export default connect(null, { chooseBase })(PizzaBase)
