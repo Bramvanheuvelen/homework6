@@ -4,6 +4,11 @@ import { chooseTopping, deleteTopping } from '../actions/index'
 
 import Paper from '@material-ui/core/Paper';
 
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Checkbox from '@material-ui/core/Checkbox';
+
 class PizzaTop extends PureComponent {
   constructor(props) {
     super(props);
@@ -54,80 +59,7 @@ render() {
         <label htmlFor="Chicken">chicken</label>
     </Paper>
   )
-}
-    /* <FormControl component="fieldset" required >
-    <FormLabel component="legend">Choose your 1, 2 or maximum 3 toppings! Price: 0.5 each</FormLabel>
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={this.state.toppingCount}
-              onChange={this.handleChange}
-              value="Pineapple"
-            />
-          }
-          label="Pineapple"
-        />
-             <FormControlLabel
-          control={
-            <Checkbox
-              checked={this.state.toppingCount}
-              onChange={this.handleChange}
-              value="Corn"
-            />
-          }
-          label="Corn"
-        />
-             <FormControlLabel
-          control={
-            <Checkbox
-              checked={this.state.toppingCount}
-              onChange={this.handleChange}
-              value="Green Olives"
-            />
-          }
-          label="Green Olives"
-        />
-             <FormControlLabel
-          control={
-            <Checkbox
-              checked={this.state.toppingCount}
-              onChange={this.handleChange}
-              value="Red Union"
-            />
-          }
-          label="Red Union"
-        />
-               <FormControlLabel
-          control={
-            <Checkbox
-              checked={this.state.toppingCount}
-              onChange={this.handleChange}
-              value="Cherry Tomatoes"
-            />
-          }
-          label="Cherry Tomatoes"
-        />
-               <FormControlLabel
-          control={
-            <Checkbox
-            checked={this.state.toppingCount}
-            onChange={this.handleChange}
-            value="Spinach"
-          />
-          }
-          label="Spinach"
-        />
-               <FormControlLabel
-          control={
-            <Checkbox
-              checked={this.state.toppingCount}
-              onChange={this.handleChange}
-              value="Chicken"
-            />
-          }
-          label="Chicken"
-        />
-            </FormControl> */}
+}}
 
 function mapStateToProps(state) {
   return {
